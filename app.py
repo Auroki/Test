@@ -382,7 +382,7 @@ app.layout = html.Div([
         html.H1('TOWA 2021 Sales Dasboard', style={'textAlign': 'center'})
     ], className='title'),
     html.Div([
-        html.P('Students:  David Peralta (20221090) | Carlos Nunes (20210997) | Eliane Gotuzzo (20210996)  .',className='paragraph')
+        html.P('Students:  David Peralta (20221090) | Ana Gomez (20221634) | Janki Mistry (20220450)  .',className='paragraph')
     ], className='column_display'),
     html.Div([
     html.H1('National & Regional Presentation', style={"font-size": "25px"})
