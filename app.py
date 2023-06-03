@@ -51,8 +51,8 @@ layout_4_3 = dict(title=dict(
                   xaxis=dict(title='Month'),
                   yaxis=dict(title='Gross Sales'),
                   paper_bgcolor = 'white',
-                  plot_bgcolor = 'white',
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  plot_bgcolor = 'white'
+                  )
 
 fig_1 = go.Figure(data=data_4_3, layout=layout_4_3)
 
@@ -75,7 +75,7 @@ values_pie = df_pie_sales['Gross Sales']
 
 data_pie = dict(type='pie', labels=labels_pie, values=values_pie)
 
-layout_pie = dict(title=dict(text='Overall Regional Sales Distribution'), margin=dict(l=40, r=40, b=20, t=5))
+layout_pie = dict(title=dict(text='Overall Regional Sales Distribution'))
 
 fig_2 = go.Figure(data=[data_pie], layout=layout_pie)
 fig_2.update_layout(title_x=0.5)
@@ -96,7 +96,7 @@ z_regional_heat = df_regional_heat.values
 
 data_regional_heat = dict(type='heatmap', x=x_regional_heat, y=y_regional_heat, z=z_regional_heat, colorscale='blugrn')
 
-layout_regional_heat = dict(title=dict(text='Regional Sales by Product'), margin=dict(l=40, r=40, b=20, t=5))
+layout_regional_heat = dict(title=dict(text='Regional Sales by Product'))
 
 fig_3 = go.Figure(data=[data_regional_heat], layout=layout_regional_heat)
 
@@ -113,7 +113,6 @@ fig = px.scatter_mapbox(df_geo, lat="Pharma Lat", lon="Pharma Long", hover_name=
                         color="Gross Sales",
                         size="Gross Sales", color_continuous_scale=px.colors.sequential.Blugrn, size_max=40,
                         zoom=5, height=1000, mapbox_style="carto-positron")
-fig.update_layout(margin=dict(l=40, r=40, b=20, t=5))
 
 ############################################
 
@@ -138,7 +137,7 @@ data_net = dict(type='bar', x=x_bar_3, y=y_bar_3, name='Net Sales', marker=dict(
 
 data_4 = [data_gross, data_disc, data_net]
 
-layout_4 = dict(title=dict(text='National Sales Performance'), margin=dict(l=40, r=40, b=20, t=5))
+layout_4 = dict(title=dict(text='National Sales Performance'))
 
 fig_4 = go.Figure(data=data_4, layout=layout_4)
 
@@ -171,7 +170,7 @@ data_net = dict(type='bar', x=x_bar_6, y=y_bar_6, name='Net Sales', marker=dict(
 
 data_5 = [data_gross, data_disc, data_net]
 
-layout_5 = dict(title=dict(text='National Sales Performance'), margin=dict(l=40, r=40, b=20, t=5))
+layout_5 = dict(title=dict(text='National Sales Performance'))
 
 fig_5 = go.Figure(data=data_5, layout=layout_5)
 
@@ -201,8 +200,8 @@ layout_whs_product = dict(title=dict(
                         text='Molecule Units Sold by WholeSaler'
                   ),
                   xaxis=dict(title='WholeSaler'),
-                  yaxis=dict(title='Units Sold'),
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  yaxis=dict(title='Units Sold')
+                  )
 
 fig_whs_product = go.Figure(data=data_whs_product, layout=layout_whs_product)
 fig_whs_product.update_xaxes(showgrid=False)
@@ -231,8 +230,8 @@ layout_whs_series = dict(title=dict(
                         text='Molecule Sales by WholeSaler'
                   ),
                   xaxis=dict(title='WholeSaler'),
-                  yaxis=dict(title='Gross Sales'),
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  yaxis=dict(title='Gross Sales')
+                  )
 
 fig_whs_series = go.Figure(data=data_whs_series, layout=layout_whs_series)
 fig_whs_series.update_xaxes(showgrid=False)
@@ -262,8 +261,8 @@ layout_salesman_product = dict(title=dict(
                         text='Molecule Units Sold by Salesman'
                   ),
                   xaxis=dict(title='Salesman'),
-                  yaxis=dict(title='Units Sold'),
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  yaxis=dict(title='Units Sold')
+                  )
 
 fig_salesman_product = go.Figure(data=data_salesman_product, layout=layout_salesman_product)
 fig_salesman_product.update_xaxes(showgrid=False)
@@ -292,8 +291,8 @@ layout_salesman_series = dict(title=dict(
                         text='Gross Sales by Salesman'
                   ),
                   xaxis=dict(title='Salesman'),
-                  yaxis=dict(title='Gross Sales'),
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  yaxis=dict(title='Gross Sales')
+                  )
 
 fig_salesman_series = go.Figure(data=data_salesman_series, layout=layout_salesman_series)
 fig_salesman_series.update_xaxes(showgrid=False)
@@ -323,8 +322,8 @@ layout_pharma_series = dict(title=dict(
                         text='Molecule Sales by Pharmacies'
                   ),
                   xaxis=dict(title='Pharmacies'),
-                  yaxis=dict(title='Gross Sales'),
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  yaxis=dict(title='Gross Sales')
+                  )
 
 fig_pharma_series = go.Figure(data=data_pharma_series, layout=layout_pharma_series)
 fig_pharma_series.update_xaxes(showgrid=False)
@@ -354,8 +353,8 @@ layout_group_series = dict(title=dict(
                         text='Gross Sales by Pharma Group'
                   ),
                   xaxis=dict(title='Pharma Group'),
-                  yaxis=dict(title='Gross Sales'),
-                  margin=dict(l=40, r=40, b=20, t=5))
+                  yaxis=dict(title='Gross Sales')
+                  )
 
 fig_group_series = go.Figure(data=data_group_series, layout=layout_group_series)
 fig_group_series.update_xaxes(showgrid=False)
@@ -382,7 +381,7 @@ app.layout = html.Div([
         html.H1('TOWA 2021 Sales Dasboard', style={'textAlign': 'center'})
     ], className='title'),
     html.Div([
-        html.P('Students:  David Peralta (20221090) | Ana Gomez (20221634) | Janki Mistry (20220450)  .',className='paragraph')
+        html.P('Students:  David Peralta (20221090) | Ana Gomez (20221634) | Janki Mistry (20220450)',className='paragraph')
     ], className='column_display'),
     html.Div([
     html.H1('National & Regional Presentation', style={"font-size": "25px"})
@@ -572,8 +571,8 @@ def plots(molecules):
         text='Molecule Units Sold by WholeSaler'
     ),
         xaxis=dict(title='WholeSaler'),
-        yaxis=dict(title='Units Sold'),
-        margin=dict(l=40, r=40, b=20, t=5))
+        yaxis=dict(title='Units Sold')
+                                )
     fig_whs_product_new = go.Figure(data=data_whs_product_new, layout=layout_whs_product_new)
     fig_whs_product_new.update_xaxes(showgrid=False)
     fig_whs_product_new.update_yaxes(showgrid=False)
@@ -606,8 +605,8 @@ def plots(whs):
         text='Molecule Sales by WholeSaler'
     ),
         xaxis=dict(title='WholeSaler'),
-        yaxis=dict(title='Gross Sales'),
-        margin=dict(l=40, r=40, b=20, t=5))
+        yaxis=dict(title='Gross Sales')
+        )
 
     fig_whs_series_new = go.Figure(data=data_whs_series_new, layout=layout_whs_series_new)
     fig_whs_series_new.update_xaxes(showgrid=False)
@@ -640,8 +639,8 @@ def plots(molecules):
         text='Molecule Units Sold by Salesman'
     ),
         xaxis=dict(title='Salesman'),
-        yaxis=dict(title='Units Sold'),
-        margin=dict(l=40, r=40, b=20, t=5))
+        yaxis=dict(title='Units Sold')
+        )
 
     fig_salesman_product_new = go.Figure(data=data_salesman_product_new, layout=layout_salesman_product_new)
     fig_salesman_product_new.update_xaxes(showgrid=False)
@@ -675,8 +674,8 @@ def plots(salesman):
         text='Gross Sales by Salesman'
     ),
         xaxis=dict(title='Salesman'),
-        yaxis=dict(title='Gross Sales'),
-        margin=dict(l=40, r=40, b=20, t=5))
+        yaxis=dict(title='Gross Sales')
+        )
 
     fig_salesman_series_new = go.Figure(data=data_salesman_series_new, layout=layout_salesman_series_new)
     fig_salesman_series_new.update_xaxes(showgrid=False)
@@ -710,8 +709,8 @@ def plots(pharma):
         text='Molecule Sales by Pharmacies'
     ),
         xaxis=dict(title='Pharmacies'),
-        yaxis=dict(title='Gross Sales'),
-        margin=dict(l=40, r=40, b=20, t=5))
+        yaxis=dict(title='Gross Sales')
+        )
 
     fig_pharma_series_new = go.Figure(data=data_pharma_series_new, layout=layout_pharma_series_new)
     fig_pharma_series_new.update_xaxes(showgrid=False)
@@ -745,8 +744,8 @@ def plots(group):
         text='Gross Sales by Pharma Group'
     ),
         xaxis=dict(title='Pharma Group'),
-        yaxis=dict(title='Gross Sales'),
-        margin=dict(l=40, r=40, b=20, t=5))
+        yaxis=dict(title='Gross Sales')
+        )
 
     fig_group_series_new = go.Figure(data=data_group_series_new, layout=layout_group_series_new)
     fig_group_series_new.update_xaxes(showgrid=False)
